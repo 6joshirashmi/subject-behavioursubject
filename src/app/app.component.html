@@ -3,4 +3,24 @@
 <app-notifier-component></app-notifier-component>
 <app-notifier-component-a></app-notifier-component-a>
 <app-notifier-component-b></app-notifier-component-b>
+
+
+
+
+<div style="width: 500px; height: 100;  border: solid; border-color: rgb(226, 202, 248);">
+  <div *ngFor="let data of myData">{{data}}</div>
+</div>
+
+
+
+<div >
+  <button (click)="EmitData()">Emit</button>
+  <button (click)="GetData()">Get</button>
+</div>
+
+
 <router-outlet />
+
+
+
+

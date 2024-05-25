@@ -6,11 +6,13 @@ import { NotificationServiceService } from './notification-service.service';
 import { NotifierComponentBComponent } from './notifier-component-b/notifier-component-b.component';
 import { NotifierComponentAComponent } from './notifier-component-a/notifier-component-a.component';
 import { NotificationComponentAComponent } from './notification-component-a/notification-component-a.component';
+import { Subject } from 'rxjs';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NotificationComponentComponent,NotificationComponentAComponent,NotifierComponentComponent,NotifierComponentBComponent,NotifierComponentAComponent],
+  imports: [RouterOutlet,CommonModule,NotificationComponentComponent,NotificationComponentAComponent,NotifierComponentComponent,NotifierComponentBComponent,NotifierComponentAComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA],
@@ -18,4 +20,39 @@ import { NotificationComponentAComponent } from './notification-component-a/noti
 })
 export class AppComponent {
   title = 'angular-subjectbehavioursbuject';
+
+myData:any=[];
+  subject= new Subject();
+ 
+  
+  ngOnInit() {
+   
+  }
+  EmitData(){
+this.subject.next(1);
+setTimeout(()=>{
+  this.subject.next(2);
+},3000);
+
+setTimeout(()=>{
+  this.subject.next(3);
+},3000);
+
+setTimeout(()=>{
+  this.subject.next(4);
+},3000);
+
+setTimeout(()=>{
+  this.subject.next(5);
+},3000);
+
+  }
+
+
+  GetData(){
+    this.subject.subscribe((data:any)=>{
+      this.myData.push(data);
+    });
+  }
+
 }
