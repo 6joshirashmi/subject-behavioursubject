@@ -5,11 +5,12 @@ import { NotifierComponentComponent } from './notifier-component/notifier-compon
 import { NotificationServiceService } from './notification-service.service';
 import { NotifierComponentBComponent } from './notifier-component-b/notifier-component-b.component';
 import { NotifierComponentAComponent } from './notifier-component-a/notifier-component-a.component';
+import { NotificationComponentAComponent } from './notification-component-a/notification-component-a.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,NotificationComponentComponent,NotifierComponentComponent,NotifierComponentBComponent,NotifierComponentAComponent],
+  imports: [RouterOutlet,NotificationComponentComponent,NotificationComponentAComponent,NotifierComponentComponent,NotifierComponentBComponent,NotifierComponentAComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css',
   schemas:[CUSTOM_ELEMENTS_SCHEMA],

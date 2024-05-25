@@ -32,3 +32,4 @@ export class NotificationComponentComponent implements OnInit, OnDestroy {
     }
   }
 }
+
