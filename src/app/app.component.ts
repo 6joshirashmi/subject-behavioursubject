@@ -22,6 +22,7 @@ export class AppComponent {
   title = 'angular-subjectbehavioursbuject';
 
 myData:any=[];
+myDataA:any=[];
   subject= new Subject();
  
   
@@ -36,15 +37,15 @@ setTimeout(()=>{
 
 setTimeout(()=>{
   this.subject.next(3);
-},3000);
+},4000);
 
 setTimeout(()=>{
   this.subject.next(4);
-},3000);
-
+},6000);
 setTimeout(()=>{
+  this.subject.complete();
   this.subject.next(5);
-},3000);
+},7000);
 
   }
 
@@ -52,6 +53,13 @@ setTimeout(()=>{
   GetData(){
     this.subject.subscribe((data:any)=>{
       this.myData.push(data);
+    });
+  }
+
+  
+  GetDataA(){
+    this.subject.subscribe((data:any)=>{
+      this.myDataA.push(data);
     });
   }
 
