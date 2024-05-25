@@ -6,7 +6,7 @@ import { NotificationServiceService } from './notification-service.service';
 import { NotifierComponentBComponent } from './notifier-component-b/notifier-component-b.component';
 import { NotifierComponentAComponent } from './notifier-component-a/notifier-component-a.component';
 import { NotificationComponentAComponent } from './notification-component-a/notification-component-a.component';
-import { Subject } from 'rxjs';
+import { AsyncSubject, BehaviorSubject, ReplaySubject, Subject } from 'rxjs';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -23,9 +23,12 @@ export class AppComponent {
 
 myData:any=[];
 myDataA:any=[];
-  subject= new Subject();
- 
-  
+  // subject= new Subject();
+ // subject= new ReplaySubject(2);
+//  subject= new BehaviorSubject(0);
+subject= new AsyncSubject();
+
+
   ngOnInit() {
    
   }
